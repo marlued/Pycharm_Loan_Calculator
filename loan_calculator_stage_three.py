@@ -1,3 +1,6 @@
+def monthly_payment():
+    pass
+
 starting_string = """
 What do you want to calculate?
 type "n" for number of monthly payments,
