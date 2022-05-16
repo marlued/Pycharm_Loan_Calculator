@@ -1,6 +1,12 @@
 def monthly_payment():
     pass
 
+def number_of_monthly_payments():
+    pass
+
+def loan_principal():
+    pass
+
 
 starting_string = """
 What do you want to calculate?
