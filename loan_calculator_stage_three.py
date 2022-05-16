@@ -10,6 +10,10 @@ def loan_principal():
     pass
 
 
+def nominal_interest_rate(interest):
+  return interest / (12 * 100)
+
+
 starting_string = """
 What do you want to calculate?
 type "n" for number of monthly payments,
