@@ -6,8 +6,7 @@ def monthly_payment():
 
 
 def number_of_monthly_payments(loan, payment, interest):
-    return ceil(log(1 + nominal_interest_rate(nominal_interest_rate(interest))) *
-                payment / (payment - nominal_interest_rate(interest) * loan))
+    return ceil(log((payment / (payment - interest * loan)), 1 + interest))
 
 
 def loan_principal():
@@ -22,7 +21,7 @@ starting_string = """
 What do you want to calculate?
 type "n" for number of monthly payments,
 type "a" for annuity monthly payment amount,
-type "p" for loan principal: \n
+type "p" for loan principal:
 """
 
 print(starting_string)
@@ -43,3 +42,12 @@ if user_input == "n":
     loan_principal = int(input('Enter the loan principal: '))
     monthly_payment = int(input('Enter the monthly payment: '))
     loan_interest = int(input('Enter the loan interest: '))
+
+    i = nominal_interest_rate(loan_interest)
+
+    calculated_period = number_of_monthly_payments(loan_principal, monthly_payment, i)
+
+    years = (calculated_period // 12)
+    months = (calculated_period % 12)
+
+    print(f'It will take {years} years and {months} months to repay this loan!')
