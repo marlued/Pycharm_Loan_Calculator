@@ -1,9 +1,13 @@
+from math import log, ceil
+
+
 def monthly_payment():
     pass
 
 
-def number_of_monthly_payments():
-    pass
+def number_of_monthly_payments(loan, payment, interest):
+    return ceil(log(1 + nominal_interest_rate(nominal_interest_rate(interest))) *
+                payment / (payment - nominal_interest_rate(interest) * loan))
 
 
 def loan_principal():
@@ -11,7 +15,7 @@ def loan_principal():
 
 
 def nominal_interest_rate(interest):
-  return interest / (12 * 100)
+    return interest / (12 * 100)
 
 
 starting_string = """
