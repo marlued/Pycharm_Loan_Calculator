@@ -1,8 +1,8 @@
-from math import log, ceil, floor
+from math import log, ceil
 
 
 def monthly_payment(credit, interest, periods):
-    return floor(credit * (interest * (1 + interest) ** periods) / ((1 + interest) ** periods - 1))
+    return ceil(credit * (interest * (1 + interest) ** periods) / ((1 + interest) ** periods - 1))
 
 
 def number_of_monthly_payments(credit, payment, interest):
